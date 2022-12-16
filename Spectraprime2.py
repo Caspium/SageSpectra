@@ -49,6 +49,23 @@ colorname = dict([(525,"525"), (590,"590"), (625,"625"), (680,"680"), (780,"780"
 colorreg = dict([ (525,LEDOUT0), (590,LEDOUT0), (625,LEDOUT0), (680,LEDOUT0), (780,LEDOUT1), (810,LEDOUT1), (870,LEDOUT1), (930,LEDOUT1)])
 colorregval = dict([(525,0x80), (590,0x20), (625,0x08), (680,0x02), (780,0x80), (810,0x20), (870,0x08), (930,0x02)])
 
+class Light:
+    def __init__(self, name, register_name, register_value):
+        self.name = name
+        self.register_name = register_name
+        self.register_value = register_value
+
+nm_525 = Light("525", LEDOUT0, 0x80)
+nm_595 = Light("525", LEDOUT0, 0x80)
+nm_625 = Light("525", LEDOUT0, 0x80)
+nm_680 = Light("525", LEDOUT0, 0x80)
+nm_780 = Light("525", LEDOUT0, 0x80)
+nm_810 = Light("525", LEDOUT0, 0x80)
+nm_870 = Light("525", LEDOUT0, 0x80)
+nm_930 = Light("525", LEDOUT0, 0x80)
+
+
+
 # initialize/reset the device
 def initialize():
     i2cbus.write_byte_data(ALLCALL, MODE1, 0x01)
